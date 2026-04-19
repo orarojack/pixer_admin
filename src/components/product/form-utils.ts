@@ -128,11 +128,15 @@ export function getProductDefaultValues(
   } = product;
   return cloneDeep({
     ...product,
+    is_digital: Boolean(Number(product?.is_digital)),
+    is_external: Boolean(Number(product?.is_external)),
+    is_taxable: Boolean(Number(product?.is_taxable)),
+    in_stock: Boolean(Number(product?.in_stock)),
     product_type: productTypeOptions.find(
       (option) => product_type === option.value,
     ),
     ...(product_type === ProductType.Simple && {
-      ...(is_digital && {
+      ...(Boolean(Number(is_digital)) && {
         digital_file_input: {
           id: digital_file?.attachment_id,
           thumbnail: digital_file?.url,
