@@ -14,6 +14,7 @@ const nextConfig = {
   i18n,
   images: {
     domains: [
+      'pixer.clipkenya.org',
       '127.0.0.1:8000',
       'via.placeholder.com',
       'res.cloudinary.com',
@@ -24,7 +25,6 @@ const nextConfig = {
       'pixarlaravel.s3.ap-southeast-1.amazonaws.com',
       'pickbazarlaravel.s3.ap-southeast-1.amazonaws.com',
       'lh3.googleusercontent.com',
-      '127.0.0.1:8000',
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {
